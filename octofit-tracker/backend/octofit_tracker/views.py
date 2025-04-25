@@ -1,6 +1,13 @@
 from rest_framework import viewsets
+from django.http import JsonResponse
 from .models import User, Team, Activity, Leaderboard, Workout
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
+
+def api_root(request):
+    return JsonResponse({
+        "message": "Welcome to the OctoFit Tracker API!",
+        "documentation_url": "https://[REPLACE-THIS-WITH-YOUR-CODESPACE-NAME]-8000.app.github.dev/docs"
+    })
 
 # ViewSet para usuários
 class UserViewSet(viewsets.ModelViewSet):
