@@ -1,6 +1,7 @@
 django==4.1
 sqlparse==0.2.4
 pymongo
+djongo
 # Removendo djongo
 # djongo
 # Removendo djangorestframework
