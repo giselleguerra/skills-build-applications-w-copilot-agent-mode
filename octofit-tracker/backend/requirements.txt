@@ -1,2 +1,7 @@
-Django==4.1
-djongo
+django==4.1
+sqlparse==0.2.4
+pymongo
+# Removendo djongo
+# djongo
+# Removendo djangorestframework
+# djangorestframework

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "octofit_tracker",
-    "corsheaders",
+    # "corsheaders",  # Removido devido a conflitos de dependências
 ]
 
 MIDDLEWARE = [
@@ -76,13 +76,18 @@ WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Configuração do MongoDB usando pymongo
 DATABASES = {
     "default": {
-        "ENGINE": "djongo",
-        "NAME": "octofit_db",
-        "HOST": "localhost",
-        "PORT": 27017,
+        "ENGINE": "django.db.backends.dummy",  # Dummy engine para evitar erros do Django
     }
+}
+
+# Corrigindo o tipo da porta para inteiro
+MONGO_DB_SETTINGS = {
+    "NAME": "octofit_db",
+    "HOST": "localhost",
+    "PORT": 27017,  # Certificando-se de que é um número inteiro
 }
 
 
